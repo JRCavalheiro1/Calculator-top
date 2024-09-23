@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #9fd7fe;
+}
+
+/*body presets*/
+.body {
+    width: 400px;
+    height: 690px;
+    border: 1px solid black;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.screen{
+    width: 320px;
+    height: 254px;
+    margin-top: 35px;
+}
+
+.keyboard  {
+    display: flex;
+    width: 320px;
+}
+
+
+/*keyboard presets*/
+.side-keyboard {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.operation-button {
+    width: 65px;
+    height: 65px;
+}
+
+.multiply, .subtract{
+    width: 80px;
+    height: 65px;
+}
+.add {
+    width: 80px;
+    height: 100px;
+}
+.enter {
+    width: 80px;
+    height: 105px;
+}
+
+.number-button {
+    width: 65px;
+    height: 65px;
+    
+}
+
+.zero {
+    width: 145px;
+    height: 65px;
+}
+
+/* selected this specefic buttons cause this method doesn't brake the alignment*/
+.ac, .backspace,
+.seven, .eigth,
+.four, .five,
+.one, .two,
+.zero{
+    margin-right: 15px;
+}
+
+.number-button,
+.operation-button {
+    margin-bottom: 10px;
+} 
+
+.operation-button,
+.number-button {
+    border: none;
+}
+
+.number-button, 
+.ac, 
+.backspace,
+.divide {
+    border-radius: 15px;
+}
+
+.multiply,
+.subtract,
+.add,
+.enter {
+    border-radius: 10px;
+}
+
+/* styling body */
+.body {
+    background: #222222;
+    filter: drop-shadow(-2px 20px 13px #525252);
+}
+
+
+/* styling keyboard */
+.operation-button, 
+.number-button {
+    font-family: "Numans", system-ui;
+}
+
+.operation-button,
+.number-button {
+    font-size: 32px;
+}
+.ac {
+    font-size: 26px;
+}
+
+.operation-button {
+    background-color: #a5c6d2;
+}
+.enter {
+    background-color: #6dc5e5;
+}
+
+.number-button {
+    background-color: #3d3d3d;
+    color: #6dc5e5
+}
+
+button {
+    cursor: pointer;
+}
+button:hover {
+    filter: brightness(0.9);
+    transition: 0.24s;
+}
