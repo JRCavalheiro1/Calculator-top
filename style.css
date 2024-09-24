@@ -29,6 +29,9 @@ body {
     width: 320px;
     height: 254px;
     margin-top: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .keyboard  {
@@ -36,6 +39,13 @@ body {
     width: 320px;
 }
 
+
+/*screen result*/
+.result {
+    font-family: "Numans", system-ui;
+    font-size: 38px;
+    color: #ffffff;
+}
 
 /*keyboard presets*/
 .side-keyboard {
@@ -56,7 +66,7 @@ body {
     width: 80px;
     height: 100px;
 }
-.enter {
+.enter-button {
     width: 80px;
     height: 105px;
 }
@@ -87,6 +97,7 @@ body {
 } 
 
 .operation-button,
+.enter-button,
 .number-button {
     border: none;
 }
@@ -101,7 +112,7 @@ body {
 .multiply,
 .subtract,
 .add,
-.enter {
+.enter-button {
     border-radius: 10px;
 }
 
@@ -113,12 +124,14 @@ body {
 
 
 /* styling keyboard */
-.operation-button, 
+.operation-button,
+.enter-button, 
 .number-button {
     font-family: "Numans", system-ui;
 }
 
 .operation-button,
+.enter-button,
 .number-button {
     font-size: 32px;
 }
@@ -129,7 +142,7 @@ body {
 .operation-button {
     background-color: #a5c6d2;
 }
-.enter {
+.enter-button {
     background-color: #6dc5e5;
 }
 
