@@ -12,7 +12,8 @@ const numberButtons = document.querySelectorAll(".number-button");
 const operatorButtons = document.querySelectorAll(".operation-button");
 const enterButton = document.querySelector(".enter-button");
 const result = document.querySelector(".result");
-
+const cleanAllButton = document.querySelector(".ac")
+const backspaceButton = document.querySelector(".backspace")
 
 
 
@@ -43,7 +44,7 @@ function operate(operator, number1, number2) {
         case "-": 
            return subtract(number1, number2);
         break;
-        case "*": 
+        case "x": 
             return multiply(number1, number2);
         break;
         case "/": 
@@ -55,26 +56,39 @@ function operate(operator, number1, number2) {
 function getOperator(word) {
     let isOperator;
     for(let i=0; i < word.length; i++) {
-        if( word.charAt(i) == "+" || word.charAt(i) == "-" || word.charAt(i) == "*" || word.charAt(i) == "/") {
+        if( word.charAt(i) == "+" || word.charAt(i) == "-" || word.charAt(i) == "x" || word.charAt(i) == "/") {
             isOperator = word.charAt(i);
         }
     }
-    
     return isOperator;
 }
 
+function cleanAll() {
+    console.log("clikad")
+    expression = "";
+    result.textContent = "";
+}
+
+function backspace() {
+    expression -= ""
+    result.textContent -= "";
+}
 
 function enterOperation() {
     if(expression == "") console.log("is empty");
-    let operator = getOperator(expression);
-    let firstNumber = Number(expression.split(operator)[0]);
-    let secondNumber = Number(expression.split(operator)[1]);
+    let operator = getOperator(expression); 
+    let firstNumber = Number(expression.split(operator)[0]); //get the first number of expression 
+    let secondNumber = Number(expression.split(operator)[1]);//get the second number of expression
 
-    result.textContent = operate(operator, firstNumber, secondNumber);
+    let currentValue = operate(operator, firstNumber, secondNumber); //get the result of expression
+    
+    result.textContent = currentValue; //uptades result on display 
+    expression = currentValue; //expression get
 }
 
 let expression = "";
 result.innerHTML = "";
+
 numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
         let number = button.textContent;
@@ -87,21 +101,16 @@ numberButtons.forEach((button) => {
 operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
         let operator = button.textContent;
-
+        
         expression += operator;
         result.textContent = expression;
     })
 })
 
+cleanAllButton.addEventListener("click", cleanAll);
+backspaceButton.addEventListener("click", backspace);
+
 enterButton.addEventListener("click", () => {
     enterOperation();
-    expression = "";
-
+        
 })
-/* const buttonsArray = [...buttons];
-const numberButtons = buttonsArray.filter((button) => Number(button.value)); */
-
-
-//let buttonNumbers = buttons.filter();
-//console.log(numberButtons);
-

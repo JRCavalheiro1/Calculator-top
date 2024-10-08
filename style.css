@@ -52,7 +52,8 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
-
+.ac, 
+.backspace,
 .operation-button {
     width: 65px;
     height: 65px;
@@ -91,11 +92,15 @@ body {
     margin-right: 15px;
 }
 
+.ac,
 .number-button,
+.backspace,
 .operation-button {
     margin-bottom: 10px;
 } 
 
+.ac,
+.backspace,
 .operation-button,
 .enter-button,
 .number-button {
@@ -124,6 +129,8 @@ body {
 
 
 /* styling keyboard */
+.ac,
+.backspace,
 .operation-button,
 .enter-button, 
 .number-button {
@@ -131,6 +138,7 @@ body {
 }
 
 .operation-button,
+.backspace,
 .enter-button,
 .number-button {
     font-size: 32px;
@@ -139,6 +147,8 @@ body {
     font-size: 26px;
 }
 
+.ac,
+.backspace,
 .operation-button {
     background-color: #a5c6d2;
 }
